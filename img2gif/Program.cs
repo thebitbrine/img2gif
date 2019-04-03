@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -14,7 +14,10 @@ namespace img2gif
             {
                 var ImagePath = args[0].Replace("\"", "");
                 var GifPath = args[0].Remove(args[0].LastIndexOf('\\'));
-                var GifName = $"{args[0].Split('\\').Last().Remove(args[0].LastIndexOf('.'))}.gif";
+
+                var FileName = args[0].Split('\\').Last();
+                var GifName = $"{FileName.Remove(FileName.LastIndexOf('.'))}.gif";
+
                 var DestGifPath = Path.Combine(GifPath, GifName);
 
                 try
